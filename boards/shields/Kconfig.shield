@@ -1,0 +1,2 @@
+config SHIELD_WRITE4-3
+  def bool $(shields_list_contains, write4-3)
