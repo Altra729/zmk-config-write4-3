@@ -11,6 +11,13 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* default_layer
+        ** ESC  Q     W     E     R     T     Y     U     I     O     P   BKSP
+        ** TAB   A     S     D     F     G     H     J     K     L        RTN
+        ** SHFT   Z     X     C     V     B     N     M     <,    >.      RSFT
+        ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        */
+
         default_layer {
             bindings = <
             &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC 
@@ -19,6 +26,13 @@
             &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
             >;
         };
+
+        /* Layer 1 (Lower)
+        ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
+        ** TAB   F1    F2    F3    TRNS  TRNS  {     }     _     +        "
+        ** SHFT   F4    F5    F6    TRNS  TRNS  :     |     Home  End     ?
+        ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        */
 
         number_layer {
             bindings = <
@@ -29,6 +43,13 @@
             >;
         }; 
 
+        /* Layer 2 (Upper)
+        ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
+        ** TAB   F7    F8    F9    TRNS  TRNS  [     ]     -     =        '
+        ** SHFT   F10   F11   F12   TRNS  TRNS  ;     |    PGDN   PGUP    /
+        ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        */
+
         symbol_layer {
             bindings = <
                           &kp QUESTION      &kp AMPERSAND   &kp ASTERISK         &kp COLON        &kp SEMICOLON
@@ -37,7 +58,14 @@
                 &kp SPACE &trans                            &trans                                &trans         &trans
             >;
         }; 
-        
+
+        /* Layer 3 (Settings)
+        ** ESC  TRNS  TRNS  TRNS  Reset TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  BKSP   
+        ** TAB   TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  VOLD  PAUSE VOLU       RTN
+        ** SHFT   TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  TRNS   TRNS     RSFT
+        ** CTRL    SPEC     ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        */
+
         settings_layer {
             bindings = <
                             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
