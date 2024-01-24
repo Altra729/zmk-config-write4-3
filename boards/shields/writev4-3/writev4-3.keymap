@@ -27,7 +27,7 @@
             >;
         };
 
-        /* Layer 1 (Lower)
+        /* Layer 1 (Lower / left bumper)
         ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
         ** TAB   F1    F2    F3    NONE  NONE  {     }     _     +        "
         ** SHFT   F4    F5    F6    NONE  NONE  :     |     Home  End     ?
@@ -36,15 +36,15 @@
 
         number_layer {
             bindings = <
-                            &kp MINUS &kp KP_N7 &kp KP_N8 &kp KP_N9 &none
-                            &kp SLASH &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp ASTERISK
-                            &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N3 &none
-                &none       &trans              &trans              &trans        &trans
+            &kp ESC    &kp EXCL  &kp AT  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC 
+            &kp TAB    &kp F1  &kp F2  &kp F3  &none   &none   &kp H  &kp J  &kp K  &kp L  &kp RET
+            &kp LSHFT  &kp F4  &kp F5  &kp F6  &none   &none   &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
+            &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
             >;
         }; 
 
-        /* Layer 2 (Upper)
-        ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
+        /* Layer 2 (Upper / right bumper)
+        ** ESC  1     2     3     4     5     6     7     8     9     0   BKSP
         ** TAB   F7    F8    F9    NONE  NONE  [     ]     -     =        '
         ** SHFT   F10   F11   F12   NONE  NONE  ;     |    PGDN   PGUP    /
         ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
@@ -52,15 +52,15 @@
 
         symbol_layer {
             bindings = <
-                          &kp QUESTION      &kp AMPERSAND   &kp ASTERISK         &kp COLON        &kp SEMICOLON
-                          &kp SLASH         &kp EXCLAMATION &kp MINUS            &kp AT           &kp UNDERSCORE
-                          &kp DOUBLE_QUOTES &kp LESS_THAN   &kp LEFT_PARENTHESIS &kp LEFT_BRACKET &kp LEFT_BRACE
-                &kp SPACE &trans                            &trans                                &trans         &trans
+            &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC 
+            &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp RET
+            &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
+            &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
             >;
         }; 
 
-        /* Layer 3 (Settings)
-        ** ESC  NONE  NONE  NONE  Reset NONE  NONE  NONE  NONE  NONE  NONE  BKSP   
+        /* Layer 3 (Settings / double bumper)
+        ** ESC  NONE  NONE  NONE  BOOT NONE  NONE  NONE  NONE  NONE  NONE   BT_CLR   
         ** TAB   NONE  NONE  NONE  NONE  NONE  NONE  VOLD  PAUSE VOLU       RTN
         ** SHFT   NONE  NONE  NONE  NONE  NONE  NONE  NONE  NONE   NONE     RSFT
         ** CTRL    SPEC     ALT     LT(1)  Space   LT(2)   NONE  NONE  NONE NONE
@@ -72,6 +72,12 @@
                             &none        &none        &none        &none        &none 
                             &kp P        &none        &none        &none        &none 
                 &bootloader &none                     &none                     &none        &bt BT_CLR
+            >;
+            bindings = <
+            &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC 
+            &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp RET
+            &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
+            &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
             >;
         };
 
