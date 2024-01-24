@@ -3,67 +3,67 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define NUMBER 1
-#define SYMBOL 2
+#define LOWER 1
+#define RAISE 2
 #define SETTINGS 3
 #define LOCK 4
  
     keymap {
         compatible = "zmk,keymap";
 
-        /* default_layer
+        /* base_layer
         ** ESC  Q     W     E     R     T     Y     U     I     O     P   BKSP
         ** TAB   A     S     D     F     G     H     J     K     L        RTN
         ** SHFT   Z     X     C     V     B     N     M     <,    >.      RSFT
-        ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        ** CTRL   SPEC    ALT     MO(1)  Space   MO(2)   LF    DN    UP   RT
         */
 
-        default_layer {
-            bindings = <
-            &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC 
-            &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp RET
-            &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
-            &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
+        base_layer {
+          bindings = <
+            &kp ESC    &kp Q     &kp W     &kp E        &kp R      &kp T  &kp Y     &kp U  &kp I      &kp O     &kp P   &kp BACKSPACE 
+            &kp TAB    &kp A     &kp S     &kp D        &kp F      &kp G  &kp H     &kp J  &kp K      &kp L             &kp RETURN
+            &kp LSHFT  &kp Z     &kp X     &kp C        &kp V      &kp B  &kp N     &kp M  &kp COMMA  &kp DOT           &kp RSHFT
+            &kp LCTRL  &kp LGUI  &kp LALT  &mo LOWER      &kp SPACE       &mo RAISE        &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT
             >;
         };
 
-        /* Layer 1 (Lower / left bumper)
+        /* lower_layer / left bumper
         ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
         ** TAB   F1    F2    F3    NONE  NONE  {     }     _     +        "
         ** SHFT   F4    F5    F6    NONE  NONE  :     |     Home  End     ?
-        ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        ** CTRL   SPEC    ALT     NONE   Space   MO(3)   LF    DN    UP   RT
         */
 
-        number_layer {
+        lower_layer {
             bindings = <
-            &kp ESC    &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSPC 
-            &kp TAB    &kp F1  &kp F2  &kp F3  &none   &none   &kp H  &kp J  &kp K  &kp L  &kp RET
-            &kp LSHFT  &kp F4  &kp F5  &kp F6  &none   &none   &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
-            &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
+            &trans  &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET       &kp AMPERSAND    &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans 
+            &trans  &kp F1           &kp F2  &kp F3    &none       &none        &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp UNDERSCORE  &kp PLUS                                     &kp DOUBLE_QUOTES
+            &trans  &kp F4           &kp F5  &kp F6    &none       &none        &kp COLON       &kp PIPE         &kp HOME        &kp END                                      &kp QUESTION
+            &trans  &trans           &trans  &none                 &trans                       &mo SETTINGS     &trans          &trans                &trans                 &trans  
             >;
         }; 
 
-        /* Layer 2 (Upper / right bumper)
-        ** ESC  1     2     3     4     5     6     7     8     9     0   BKSP
+        /* raise_layer / right bumper
+        ** ESC  1     2     3     4     5     6     7     8     9     0   DEL
         ** TAB   F7    F8    F9    NONE  NONE  [     ]     -     =        '
-        ** SHFT   F10   F11   F12   NONE  NONE  ;     |    PGDN   PGUP    /
-        ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        ** SHFT   F10   F11   F12   NONE  NONE  ;     \    PGDN   PGUP    /
+        ** CTRL   SPEC    ALT     LT(3)  Space   NONE    LF    DN    UP   RT
         */
 
-        symbol_layer {
+        raise_layer {
             bindings = <
-            &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC 
-            &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp RET
-            &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
-            &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
+            &trans  &kp 1    &kp 2    &kp 3    &kp 4   &kp 5   &kp 6             &kp 7              &kp 8          &kp 9        &kp 0   &kp DEL 
+            &trans  &kp F7   &kp F8   &kp F9   &none   &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp K          &kp L                &kp SINGLE_QUOTE
+            &trans  &kp F10  &kp F11  &kp F12  &none   &none   &kp SEMICOLON     &kp BACKSLASH      &kp PAGE_DOWN  &kp PAGE_UP          &kp SLASH
+            &trans  &trans   &trans   &mo SETTINGS     &trans                    &none              &trans         &trans       &trans  &trans
             >;
         }; 
 
-        /* Layer 3 (Settings / double bumper)
-        ** ESC  NONE  NONE  NONE  BOOT NONE  NONE  NONE  NONE  NONE  NONE   BT_CLR   
-        ** TAB   NONE  NONE  NONE  NONE  NONE  NONE  VOLD  PAUSE VOLU       RTN
-        ** SHFT   NONE  NONE  NONE  NONE  NONE  NONE  NONE  NONE   NONE     RSFT
-        ** CTRL    SPEC     ALT     LT(1)  Space   LT(2)   NONE  NONE  NONE NONE
+        /* settings_layer / double bumper
+        ** NONE  BT_1  BT_2  BT_3  BOOT NONE  NONE  NONE  NONE  NONE  NONE  BT_CLR   
+        ** NONE   NONE  NONE  NONE  NONE  NONE  NONE  VOLD  PAUSE VOLU      RTN
+        ** NONE    NONE  NONE  NONE  NONE  NONE  NONE  NONE  NONE   NONE    RSFT
+        ** NONE    NONE     NONE    NONE     NONE   NONE   GUI  NONE  NONE  SCREENSHOOT
         */
 
         settings_layer {
