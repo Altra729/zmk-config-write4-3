@@ -36,7 +36,7 @@
 
         number_layer {
             bindings = <
-            &kp ESC    &kp EXCL  &kp AT  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC 
+            &kp ESC    &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSPC 
             &kp TAB    &kp F1  &kp F2  &kp F3  &none   &none   &kp H  &kp J  &kp K  &kp L  &kp RET
             &kp LSHFT  &kp F4  &kp F5  &kp F6  &none   &none   &kp N  &kp M  &kp COMMA  &kp DOT  &kp RSHFT
             &kp LCTRL  &kp LGUI  &kp LALT  &kp (lower)  &kp SPACE  &kp (upper)  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
