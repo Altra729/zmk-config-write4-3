@@ -29,8 +29,8 @@
 
         /* Layer 1 (Lower)
         ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
-        ** TAB   F1    F2    F3    TRNS  TRNS  {     }     _     +        "
-        ** SHFT   F4    F5    F6    TRNS  TRNS  :     |     Home  End     ?
+        ** TAB   F1    F2    F3    NONE  NONE  {     }     _     +        "
+        ** SHFT   F4    F5    F6    NONE  NONE  :     |     Home  End     ?
         ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
         */
 
@@ -45,8 +45,8 @@
 
         /* Layer 2 (Upper)
         ** ESC  !     @     #     $     %     ^     &     *     (     )   BKSP
-        ** TAB   F7    F8    F9    TRNS  TRNS  [     ]     -     =        '
-        ** SHFT   F10   F11   F12   TRNS  TRNS  ;     |    PGDN   PGUP    /
+        ** TAB   F7    F8    F9    NONE  NONE  [     ]     -     =        '
+        ** SHFT   F10   F11   F12   NONE  NONE  ;     |    PGDN   PGUP    /
         ** CTRL   SPEC    ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
         */
 
@@ -60,10 +60,10 @@
         }; 
 
         /* Layer 3 (Settings)
-        ** ESC  TRNS  TRNS  TRNS  Reset TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  BKSP   
-        ** TAB   TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  VOLD  PAUSE VOLU       RTN
-        ** SHFT   TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  TRNS  TRNS   TRNS     RSFT
-        ** CTRL    SPEC     ALT     LT(1)  Space   LT(2)   LF    DN    UP   RT
+        ** ESC  NONE  NONE  NONE  Reset NONE  NONE  NONE  NONE  NONE  NONE  BKSP   
+        ** TAB   NONE  NONE  NONE  NONE  NONE  NONE  VOLD  PAUSE VOLU       RTN
+        ** SHFT   NONE  NONE  NONE  NONE  NONE  NONE  NONE  NONE   NONE     RSFT
+        ** CTRL    SPEC     ALT     LT(1)  Space   LT(2)   NONE  NONE  NONE NONE
         */
 
         settings_layer {
